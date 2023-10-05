@@ -1,0 +1,105 @@
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //TASK 1
+            //Console.Write("Ededi daxil edin: ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+
+            //int cutEdedlerCemi = CütEdedlerCemi(n);
+
+            //Console.WriteLine($"0-dan {n} qeder olan bütün cüt ededlerin cemi: {cutEdedlerCemi}");
+
+
+
+            //TASK 2
+            //int[] imtahanQiymetleri = { 70, 85, 90, 50, 65 };
+            //double ortalamaQiymet = OrtalamaHesabla(imtahanQiymetleri);
+
+            //if (ortalamaQiymet > 60)
+            //{
+            //    Console.WriteLine("Mezun oldunuz");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Mezun ola bilmədiniz");
+            //}
+
+
+            //TASK 3
+            double circleArea = HesablaDaireSahesi(5.0);
+            Console.WriteLine("Dairenin sahəsi: " + circleArea);
+
+            double rectangleArea = HesablaDuzbucaqlininSahesi(4.0, 6.0);
+            Console.WriteLine("Düzbucaqlının sahəsi: " + rectangleArea);
+
+            double parallelepipedArea = HesablaDuzbucaqliParalelpipedinSahesi(2.0, 3.0, 4.0);
+            Console.WriteLine("Düzbucaqlı paralelpipedin sahəsi: " + parallelepipedArea);
+
+            double triangleCircleArea = HesablaUcgeninDaxilineCekilmisDaireninSahesi(3.0, 4.0, 5.0);
+            Console.WriteLine("Üçbucaqlının daxilinə çəkilmiş dairenin sahəsi: " + triangleCircleArea);
+
+        }
+        //TASK 1
+        //static int CütEdedlerCemi(int n)
+        //{
+        //    int cemi = 0;
+
+        //    for (int i = 0; i <= n; i += 2)
+        //    {
+        //        cemi += i;
+        //    }
+
+        //    return cemi;
+        //}
+
+
+
+        //TASK 2
+        //static double OrtalamaHesabla(int[] qiymetler)
+        //{
+        //    if (qiymetler.Length == 0)
+        //    {
+        //        return -1;
+        //    }
+
+        //    double cemi = 0;
+
+        //    for (int i = 0; i < qiymetler.Length; i++)
+        //    {
+        //        cemi += qiymetler[i];
+        //    }
+
+        //    double ortalama = cemi / qiymetler.Length;
+
+        //    return ortalama;
+        //}
+
+
+
+        //TASK 3
+        static double HesablaDaireSahesi(double r)
+        {
+            const double pi = Math.PI;
+            return pi * Math.Pow(r, 2);
+        }
+
+        static double HesablaDuzbucaqlininSahesi(double a, double b)
+        {
+            return a * b;
+        }
+
+        static double HesablaDuzbucaqliParalelpipedinSahesi(double a, double b, double c)
+        {
+            return 2 * (a * b + a * c + b * c);
+        }
+
+        static double HesablaUcgeninDaxilineCekilmisDaireninSahesi(double a, double b, double c)
+        {
+            double p = (a + b + c) / 2;
+            return p * HesablaDaireSahesi(p / 2);
+        }
+    }
+}
